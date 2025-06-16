@@ -1,0 +1,23 @@
+{
+    "name": "saucedemo-automation",
+    "version": "1.0.0",
+    "scripts": {
+
+        "test": "mocha test/specs/ --reporter mochawesome --reporter-options reportDir=reports,reportFilename=report,quiet=true,overwrite=false,html=false,json=true",
+
+        "test:headed": "cross-env HEADLESS=false npm test",
+        "report": "mochawesome-merge reports/*.json > combined.json && marge combined.json"
+    },
+    "dependencies": {
+        "chai": "^4.3.7",
+        "chromedriver": "^136.0.0",
+        "mocha": "^10.2.0",
+        "mochawesome-merge": "^4.3.0",
+        "mochawesome-report-generator": "^6.2.0",
+        "selenium-webdriver": "^4.32.0"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "mochawesome": "^7.1.3"
+    }
+}
