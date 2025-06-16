@@ -1,0 +1,296 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-16T10:31:08.232Z",
+    "end": "2025-06-16T10:31:17.862Z",
+    "duration": 9630,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "860d67ac-24d0-420b-a61e-ca97c96e6b03",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ac7b587f-a571-4da5-93fe-747d6efba936",
+          "title": "Checkout Process",
+          "fullFile": "C:\\Users\\DELL\\Downloads\\sof\\test\\specs\\checkout.test.js",
+          "file": "\\test\\specs\\checkout.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Checkout Process\"",
+              "fullTitle": "Checkout Process \"before all\" hook in \"Checkout Process\"",
+              "timedOut": false,
+              "duration": 5357,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await getDriver();\nloginPage = new LoginPage(driver);\ninventoryPage = new InventoryPage(driver);\ncartPage = new CartPage(driver);\nawait loginPage.open();\nawait loginPage.login('standard_user', 'secret_sauce');",
+              "err": {},
+              "uuid": "112eb15f-68fd-4785-b41e-7e240949858e",
+              "parentUUID": "ac7b587f-a571-4da5-93fe-747d6efba936",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Checkout Process\"",
+              "fullTitle": "Checkout Process \"after all\" hook in \"Checkout Process\"",
+              "timedOut": false,
+              "duration": 81,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "c728f032-33bc-47e9-816b-f3a1fb29d327",
+              "parentUUID": "ac7b587f-a571-4da5-93fe-747d6efba936",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook in \"Checkout Process\"",
+              "fullTitle": "Checkout Process \"after each\" hook in \"Checkout Process\"",
+              "timedOut": false,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (this.currentTest.state === 'failed') {\n  await takeScreenshot(driver, this.currentTest.title.replace(/\\s+/g, '_'));\n}",
+              "err": {},
+              "uuid": "4d4e247e-7424-472b-9ff0-afa2f7dcdadd",
+              "parentUUID": "ac7b587f-a571-4da5-93fe-747d6efba936",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "should add item to cart",
+              "fullTitle": "Checkout Process should add item to cart",
+              "timedOut": false,
+              "duration": 149,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await inventoryPage.addFirstItemToCart();\nconst badge = await driver.findElement(By.css('.shopping_cart_badge')).getText();\nassert.equal(badge, '1');",
+              "err": {},
+              "uuid": "4c675ad1-3cb0-4759-95ed-892ce8f9507c",
+              "parentUUID": "ac7b587f-a571-4da5-93fe-747d6efba936",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should proceed to checkout",
+              "fullTitle": "Checkout Process should proceed to checkout",
+              "timedOut": false,
+              "duration": 295,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await inventoryPage.openCart();\nawait cartPage.proceedToCheckout();\nconst url = await driver.getCurrentUrl();\nassert.include(url, 'checkout-step-one.html');",
+              "err": {},
+              "uuid": "19adadaf-c8e7-40c9-98df-fe5354cbc36d",
+              "parentUUID": "ac7b587f-a571-4da5-93fe-747d6efba936",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4c675ad1-3cb0-4759-95ed-892ce8f9507c",
+            "19adadaf-c8e7-40c9-98df-fe5354cbc36d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 444,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        },
+        {
+          "uuid": "70e82ef6-2a24-4eb9-8f38-dc79883744ad",
+          "title": "SauceDemo Login Tests",
+          "fullFile": "C:\\Users\\DELL\\Downloads\\sof\\test\\specs\\login.test.js",
+          "file": "\\test\\specs\\login.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"SauceDemo Login Tests\"",
+              "fullTitle": "SauceDemo Login Tests \"before all\" hook in \"SauceDemo Login Tests\"",
+              "timedOut": false,
+              "duration": 995,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await getDriver();\nloginPage = new LoginPage(driver);",
+              "err": {},
+              "uuid": "85ee0af8-12bb-43be-8f4c-a6c1651c1536",
+              "parentUUID": "70e82ef6-2a24-4eb9-8f38-dc79883744ad",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"SauceDemo Login Tests\"",
+              "fullTitle": "SauceDemo Login Tests \"after all\" hook in \"SauceDemo Login Tests\"",
+              "timedOut": false,
+              "duration": 45,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "35527459-f191-40ee-bf7d-81eeb494a0a9",
+              "parentUUID": "70e82ef6-2a24-4eb9-8f38-dc79883744ad",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook in \"SauceDemo Login Tests\"",
+              "fullTitle": "SauceDemo Login Tests \"after each\" hook in \"SauceDemo Login Tests\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (this.currentTest.state === 'failed') {\n  await takeScreenshot(driver, this.currentTest.title.replace(/\\s+/g, '_'));\n}",
+              "err": {},
+              "uuid": "a3fab38b-2d67-4347-840e-0e4f729fdda8",
+              "parentUUID": "70e82ef6-2a24-4eb9-8f38-dc79883744ad",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "should login with valid credentials",
+              "fullTitle": "SauceDemo Login Tests should login with valid credentials",
+              "timedOut": false,
+              "duration": 2070,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginPage.open();\nawait loginPage.login('standard_user', 'secret_sauce');\nconst url = await driver.getCurrentUrl();\nassert.include(url, 'inventory.html');",
+              "err": {},
+              "uuid": "da43e15e-2036-4e01-a2e2-eefcbd9b9743",
+              "parentUUID": "70e82ef6-2a24-4eb9-8f38-dc79883744ad",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show error with invalid credentials",
+              "fullTitle": "SauceDemo Login Tests should show error with invalid credentials",
+              "timedOut": false,
+              "duration": 611,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginPage.open();\nawait loginPage.login('invalid_user', 'wrong_pass');\nconst errorText = await loginPage.getErrorMessage();\nassert.include(errorText.toLowerCase(), 'epic sadface');",
+              "err": {},
+              "uuid": "0cc7bd92-bbc2-435f-bc4f-37718d54f1b4",
+              "parentUUID": "70e82ef6-2a24-4eb9-8f38-dc79883744ad",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "da43e15e-2036-4e01-a2e2-eefcbd9b9743",
+            "0cc7bd92-bbc2-435f-bc4f-37718d54f1b4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2681,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.8.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports",
+        "reportFilename": "report",
+        "quiet": "true",
+        "overwrite": "false",
+        "html": "false",
+        "json": "true"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
